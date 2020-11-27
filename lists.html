@@ -1,0 +1,19 @@
+---
+layout: default
+permalink: /lists/
+---
+
+<main>
+  <div>List:</div>
+
+  {% for takeaway in site.takeaways %}
+    <div>
+      <div>{{ takeaway.takeaway_name }}</div>
+
+      {% for dish in takeaway.dish %}
+        {{ dish.name }}
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+</main>
