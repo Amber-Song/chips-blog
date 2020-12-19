@@ -4,16 +4,10 @@ permalink: /lists/
 ---
 
 <main>
-  <div>List:</div>
+  <div class="list-title">All takeaways in DUD:</div>
 
   {% for takeaway in site.takeaways %}
-    <div>
-      <div>{{ takeaway.takeaway_name }}</div>
-
-      {% for dish in takeaway.dish %}
-        {{ dish.name }}
-      {% endfor %}
-    </div>
+    {% include restaurant-item.html takeaway=takeaway %}
   {% endfor %}
 
 </main>

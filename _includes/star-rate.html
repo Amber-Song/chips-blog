@@ -1,0 +1,9 @@
+{% assign rategot = include.rate %}
+{% for i in (1..rategot) %}
+  <span class="fa fa-star checked-star"></span>
+{% endfor %}
+
+{% assign ratelost = 5 | minus: rategot %}
+{% for i in (1..ratelost) %}
+  <span class="fa fa-star"></span>
+{% endfor %}

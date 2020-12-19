@@ -1,0 +1,17 @@
+{% assign image_url = "/static/excite.jpg" %}
+
+{% for img in site.static_files %}
+  {% if img.path == takeaway.takeaway_img %}
+    {% assign image_url = takeaway.takeaway_img %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<li class="restaurant-item" style="background-image: url({{image_url}});">
+  <div class="restaurant-item-description">
+    <div class="restaurant-item-description-title">{{ takeaway.takeaway_name }}</div>
+    {% include star-rate.html rate=takeaway.takeaway_rate %}
+    <div>{{ takeaway.comment }}</div>
+  </div>
+  <div class="restaurant-item-image"></div>
+</li>
