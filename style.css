@@ -156,6 +156,11 @@ li.restaurant-item {
   color: var(--primary-color);
 }
 
+#map {
+  width: 410px;
+  height: 540px;
+}
+
 /* Not found */
 .img-text {
   display: grid;
