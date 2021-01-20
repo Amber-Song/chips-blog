@@ -1,0 +1,17 @@
+{% assign image_url = "/static/smile.jpg" %}
+
+{% for img in site.static_files %}
+  {% if img.path == takeaway.takeaway_img %}
+    {% assign image_url = takeaway.takeaway_img %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="takeaway-display-item">
+  <img src="{{image_url}}" alt="{{ takeaway.takeaway_name }}">
+  <div class="takeaway-display-item-content">
+    <div class="takeaway-display-item-title">{{ takeaway.takeaway_name }}</div>
+    {% include star-rate.html rate=takeaway.takeaway_rate %}
+    <div>{{ takeaway.comment }}</div>
+  </div>
+</div>

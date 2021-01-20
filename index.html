@@ -13,5 +13,36 @@ permalink: /
     </div>
   </section>
 
-  {% include google-map.html %}
+  <section class="map-takeaway">
+    {% include google-map.html %}
+
+    <div class="takeaway-beside-map" id="takeaway-beside-map">
+      <div class="takeaway-display-whole-list">
+        {% for takeaway in site.takeaways %}
+          {% include restaurant-display.html takeaway=takeaway %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
 </main>
+
+<script>
+  let len = {{site.takeaways.size}};
+  let i = 0;
+  let element = document.querySelector('.takeaway-display-whole-list')
+
+  function changeTakeawayID() {
+    if (i >= len - 1) {
+      i = 0;
+    } else {
+      i = i + 1;
+    }
+    element.setAttribute('style', `--index:${i}; --delay:3s`);
+    console.log(i);
+
+    setTimeout(changeTakeawayID, 3000);
+  }
+
+  setTimeout(changeTakeawayID, 3000);
+</script>
+

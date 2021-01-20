@@ -5,7 +5,15 @@
 
   {% for takeaway in site.takeaways %}
     {% if takeaway.takeaway_coord %}
-      mapData.push({lat: {{ takeaway.takeaway_coord.lat }}, lng: {{ takeaway.takeaway_coord.lng }}});
+      mapData.push(
+        {
+          coords: {
+            lat: {{ takeaway.takeaway_coord.lat }},
+            lng: {{ takeaway.takeaway_coord.lng }}
+          },
+          content: "<h1>{{takeaway.takeaway_name}}</h1>"
+        }
+      );
     {% endif %}
   {% endfor %}
 
@@ -18,14 +26,14 @@
     }
     let map = new google.maps.Map(document.getElementById('map'), options);
 
-    function addMarker(coords) {
+    function addMarker(props) {
       let marker = new google.maps.Marker({
-        position: coords,
+        position: props.coords,
         map: map
       })
 
       let infoWindow = new google.maps.InfoWindow({
-        content:"<h1>hi</h1>"
+        content: props.content
       })
 
       marker.addListener('click', function() {
