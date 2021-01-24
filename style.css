@@ -125,6 +125,10 @@ header .active a {
   margin: 10px 0px;
 }
 
+.restaurant-item-description button {
+  margin-left: 0px;
+}
+
 @media only screen and (max-width: 500px) {
   main {
     padding: 10px;
@@ -226,6 +230,23 @@ header .active a {
 #map {
   width: 410px;
   height: 540px;
+}
+
+button {
+  display: block;
+  width: 100px;
+  margin: 15px auto;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: large;
+  font-weight: bold;
+  color: var(--primary-color);
+  background-color: black;
+}
+
+button:hover {
+  color: black;
+  background-color: var(--primary-color);
 }
 
 /* Not found */
