@@ -1,6 +1,6 @@
 :root {
   --primary-color: orange;
-  --restaurant-pic-width: 200px;
+  --restaurant-pic-width: 356px;
   box-sizing: border-box;
 }
 
@@ -116,7 +116,7 @@ header .active a {
 .takeaway-list .restaurant-item-image {
   height: 100%;
   width: var(--restaurant-pic-width);
-  background-image: linear-gradient(to left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.9) 100%);
+  background-image: linear-gradient(to left, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.4) 80%, rgba(255,255,255,1) 100%);
 }
 
 .takeaway-list .restaurant-item-description-title {
@@ -242,10 +242,10 @@ header .active a {
   position: absolute;
   bottom: 10px;
   left: 40px;
+  color: white;
 }
 
 .takeaway-dish-list-window {
-  display: flex;
   width: 90%;
   margin: 120px auto;
   overflow-x: hidden;
@@ -254,11 +254,12 @@ header .active a {
 .takeaway-dish-list {
   width: max-content;
   margin: 0 auto;
+  display: flex;
 }
 
 .takeaway-dish {
-  margin: 0 25px;
-  width: 100px;
+  margin: 0 35px;
+  width: fit-content;
 }
 
 .takeaway-dish img {
