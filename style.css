@@ -217,6 +217,89 @@ header .active a {
   margin: 10px 0px;
 }
 
+/* Takeaway page */
+.takeaway-page {
+  font-family: 'Kelly Slab', cursive;
+  line-height: 32px;
+  background-color: white;
+}
+
+.takeaway-image {
+  width: 90%;
+  height: calc(90vw*9/16);
+  margin: 0 auto;
+  border-radius: 5px;
+  background-image: var(--image-path);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  position: relative;
+}
+
+.takeaway-title {
+  font-family: 'Sigmar One', cursive;
+  font-size: xxx-large;
+  position: absolute;
+  bottom: 10px;
+  left: 40px;
+}
+
+.takeaway-dish-list-window {
+  display: flex;
+  width: 90%;
+  margin: 120px auto;
+  overflow-x: hidden;
+}
+
+.takeaway-dish-list {
+  width: max-content;
+  margin: 0 auto;
+}
+
+.takeaway-dish {
+  margin: 0 25px;
+  width: 100px;
+}
+
+.takeaway-dish img {
+  display: block;
+  border: 1px solid black;
+  width: auto;
+  height: 150px;
+}
+
+.takeaway-dish-tag {
+  border: 2px solid #2d2d2d;
+  border-radius: 45%;
+  width: fit-content;
+  padding: 0 10px;
+  line-height: 20px;
+}
+
+.takeaway-dish-inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.takeaway-dish-price {
+  display: inline-flex;
+}
+
+.takeaway-dish-date {
+  display: inline-flex;
+}
+
+.takeaway-dish-comment {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 25px 30px 25px;
+  box-sizing: border-box;
+}
+
+.takeaway-dish-comment-text {
+  text-decoration: underline;
+}
+
 /* Something */
 .no-style {
   text-decoration: none;

@@ -1,0 +1,42 @@
+---
+layout: default
+permalink: /page
+---
+
+{% assign takeaway=site.takeaways[0] %}
+
+{% assign image_url = "/static/smile.jpg" %}
+
+{% for img in site.static_files %}
+  {% if img.path == takeaway.takeaway_img %}
+    {% assign image_url = takeaway.takeaway_img %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
+<div class="takeaway-page">
+  <div class="takeaway-image" style="--image-path: url({{image_url}})">
+    <div class="takeaway-title">{{takeaway.takeaway_name}}</div>
+  </div>
+
+  <div class="takeaway-dish-list-window">
+    <div class="takeaway-dish-list">
+      {% for dish in takeaway.dishes %}
+      <div class="takeaway-dish">
+        <img src={{dish.image}} alt={{dish.name}}>
+        <div>{{dish.name}}</div>
+        <div class="takeaway-dish-tag">{{dish.tag}}</div>
+        <div class="takeaway-dish-inline">
+          <div class="takeaway-dish-price">{{dish.price}}</div>
+          <div class="takeaway-dish-date">{{dish.date}}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="takeaway-dish-comment">
+    Comment: <br>
+    <span class="takeaway-dish-comment-text">{{takeaway.comment}}</span>
+  </div>
+</div>
